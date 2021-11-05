@@ -1,6 +1,8 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, createMemoryHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
+const isServer = typeof window === 'undefined';
+const history = isServer ? createMemoryHistory() : createWebHistory();
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -18,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history,
   routes
 })
 
