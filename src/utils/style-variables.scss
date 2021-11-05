@@ -9,8 +9,19 @@
     justify-content: center;
 }
 @mixin icon-props {
-    height: 40px;
-    width: 40px;
+    svg{
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    &:hover{
+        stroke: rgb(75, 73, 73);
+        fill: rgb(102, 84, 58);
+        transform: scale(1.2);
+        filter:  drop-shadow(10px 10px 10px  #776f6d77)
+    }
+    transition: all ease .4s;
     cursor: pointer;
 }
 

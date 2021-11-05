@@ -28,6 +28,11 @@ export default {
     justify-content: flex-end;
     position: relative;
     font-family: "SF Pro Rounded";
+    cursor: pointer;
+    transition: all ease .4s;
+    &:hover{
+        transform: scale(1.2);
+    }
     &-icon{
         img{
             width: 164px;

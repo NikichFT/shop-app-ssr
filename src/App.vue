@@ -1,34 +1,17 @@
 <template>
-  <Header/>
-  <div class="content">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/> -->
-    <div class="title-home">Delicious <br> food for you</div>
-    <InputHome/>
-    <div class="product-area--home">
-      <Product/>
-      <Product/>
-      <Product/>
-      <Product/>
-      <Product/>
-    </div>
-  </div>
-  <Footer/>
+    </div> -->
+    <router-view/> 
 </template>
 
 <script lang="ts">
-import Footer from '@/components/Footer.vue'
-import Header from '@/components/Header.vue'
-import InputHome from '@/components/InputHome.vue'
-import Product from '@/components/Product.vue'
 
 export default ({
   name: 'App',
   components: {
-    Footer, Header, InputHome, Product
+    
   }
 })
 </script>
@@ -50,20 +33,9 @@ export default ({
 body::-webkit-scrollbar {
   display: none;
 }
-.content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  @include padding-page;
-}
-.title-home{
+.title{
   font-family: "SF Pro Rounded";
   font-size: 34px;
-}
-.product-area--home{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 *{

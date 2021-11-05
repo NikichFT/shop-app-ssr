@@ -17,6 +17,15 @@ module.exports = {
     webpackConfig.module.rule('ts').uses.delete('cache-loader')
     webpackConfig.module.rule('tsx').uses.delete('cache-loader')
 
+    webpackConfig.module.rule('svg').uses.clear();
+
+    webpackConfig.module.rule('svg')
+      .use('vue-loader-v16')
+      .loader('vue-loader-v16') // or `vue-loader-v16` if you are using a preview support of Vue 3 in Vue CLI
+      .end()
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader');
+
     if (!process.env.SSR) {
       // This is required for repl.it to play nicely with the Dev Server
       webpackConfig.devServer.disableHostCheck(true);

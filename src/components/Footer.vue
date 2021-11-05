@@ -1,23 +1,31 @@
 <template>
   <div class="footer-nav">
       <div class="footer-nav__item">
-          <img class="footer-nav__item-home-active" src="../img/icons/home-icon.svg"/>
+          <homeIcon class="footer-nav__item-home active-nav-footer"/>
       </div>
       <div class="footer-nav__item">
-          <img class="footer-nav__item-liked" src="../img/icons/heart-icon.svg"/>
+          <userIcon class="footer-nav__item-profile"/>
       </div>
       <div class="footer-nav__item">
-          <img class="footer-nav__item-profile" src="../img/icons/user-icon.svg"/>
+          <heartIcon class="footer-nav__item-liked"/>
       </div>
       <div class="footer-nav__item">
-          <img class="footer-nav__item-history" src="../img/icons/history-icon.svg"/>
+          <historyIcon class="footer-nav__item-history"/>
       </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import homeIcon from '@/img/icons/home-icon.svg'
+import userIcon from '@/img/icons/user-icon.svg'
+import heartIcon from '@/img/icons/heart-icon.svg'
+import historyIcon from '@/img/icons/history-icon.svg'
+
 export default {
     name: 'Footer',
+    components: {
+        homeIcon, userIcon, heartIcon, historyIcon
+    },
     data(){
         return{
 
@@ -42,14 +50,8 @@ export default {
         @include nav-item-style;
         &-home{
             @include icon-props;
-            &-active{
-                box-shadow:  10px 5px 15px  #d7390077
-            }
-            &:hover{
-                fill: black;
-            }
         }
-        &-liked{
+        &-liked {
             @include icon-props;
         }
         &-profile{
@@ -57,6 +59,9 @@ export default {
         }
         &-history{
             @include icon-props;
+        }
+        .active-nav-footer{
+            filter:  drop-shadow(10px 10px 10px  #d7390077)
         }
     }
 }

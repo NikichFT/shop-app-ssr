@@ -1,17 +1,23 @@
 <template>
   <div class="header-nav">
       <div class="header-nav__item">
-          <img class="menu" src="../img/icons/menu-icon.svg"/>
+          <menuIcon class="menu"/>
       </div>
       <div class="header-nav__item">
-          <img class="shopping-cart" src="../img/icons/shopping-cart.svg"/>
+          <shoppingCart class="shopping-cart"/>
       </div>
   </div>
 </template>
 
 <script lang="ts">
+import menuIcon from '@/img/icons/menu-icon.svg';
+import shoppingCart from '@/img/icons/shopping-cart.svg'
+
 export default {
-    name: 'Header'
+    name: 'Header',
+    components: {
+        menuIcon, shoppingCart
+    }
 }
 </script>
 
