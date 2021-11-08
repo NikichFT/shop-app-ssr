@@ -1,25 +1,45 @@
 <template>
     <div class="input-area--home">
-        <input type="text" class="input-home" @focus="searchActive = true" @focusout="searchActive = false" :class="{'active-search': searchActive}" placeholder="Search"/>
-        <button class="input-home-button" title="Search"><i class="fa fa-search"></i></button>
+        <input type="text" ref="input" class="input-home" :class="{'active-search': route.name === 'SearchView'}" :style="{ borderRadius: route.name === 'SearchView' ? 0 : '30px', height: route.name === 'SearchView' ? '100px' : '42px' }" @focus="searchActive = true" @focusout="searchActive = false" placeholder="Search" @click="this.$router.push({ path: 'search' })"/>
+        <button class="input-home-button" :style="{ marginLeft: route.name === 'SearchView' ? '95%' : '200px' }" title="Search"><i class="fa fa-search"></i></button>
     </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent, onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+export default defineComponent({
     name: 'InputHome',
+    props: {
+    },
+    setup(){
+        const input = ref()
+        const route = useRoute()
+
+        onMounted(()=>{
+            if (route.name === 'SearchView') {
+                input.value.focus()
+            }
+        })
+
+        return{
+            input, route
+        }
+    },
     data(){
         return{
             searchActive: false
         }
-    }
-}
+    },
+})
 </script>
 
 <style lang="scss" scoped>
 .input-area--home{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .input-home{
     outline: 0;
@@ -31,7 +51,6 @@ export default {
     color: #212121;
     border: 0;
     float: left;
-    border-radius: 30px;
     transition: all ease .4s;
     &:focus{
         outline: 0;

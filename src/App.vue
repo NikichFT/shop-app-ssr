@@ -3,7 +3,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
+    <transition name="fade">
     <router-view/> 
+    </transition>
 </template>
 
 <script lang="ts">
@@ -18,11 +20,18 @@ export default ({
 
 <style lang="scss">
 @import './utils/style-variables.scss';
-@font-face {font-family: "SF Pro Rounded"; src: url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.eot"); src: url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.woff") format("woff"), url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/511031ed9122c8ea1450b18b876221fe.svg#SF Pro Rounded") format("svg"); }
+@font-face {font-family: "SF Pro Rounded"; src: url(./fonts/SF-Pro-Rounded-Bold.ttf)}
 @font-face {
     font-family: "SF Pro Text"; /* Имя шрифта */
     src: url(./fonts/SF-UI-Text-Light.ttf); /* Путь к файлу со шрифтом */
    }
+   
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease-in;
+}
+.fade-enter-from, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 
 #app {
   width: 100vw;

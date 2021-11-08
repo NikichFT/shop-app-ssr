@@ -1,18 +1,23 @@
 <template>
   <div class="product">
       <div class="product-icon">
-          <img src="../img/image2.png" alt="">
+          <img :src="image" :alt="name">
       </div>
       <div class="product-body">
-        <div class="product-name">Veggie tomato mix</div>
-        <div class="product-price">330р</div>
+        <div class="product-name">{{name}}</div>
+        <div class="product-price">{{price}}</div>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Product'
+    name: 'Product',
+    props: {
+        name: String,
+        price: Number,
+        image: String
+    }
 }
 </script>
 
@@ -20,7 +25,7 @@ export default {
 @import '../utils/style-variables.scss';
 
 .product{
-    width: 220px;
+    width: 120px;
     height: 321px;
     display: flex;
     flex-direction: column;
@@ -30,6 +35,8 @@ export default {
     font-family: "SF Pro Rounded";
     cursor: pointer;
     transition: all ease .4s;
+    align-self: center;
+    justify-self: center;
     &:hover{
         transform: scale(1.2);
     }

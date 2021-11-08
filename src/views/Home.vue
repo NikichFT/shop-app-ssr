@@ -9,7 +9,7 @@
       <router-view/> -->
       <div class="title">Delicious <br> food for you</div>
       <InputHome/>
-      <ProductsArea/>
+      <ProductsArea :products="PRODUCTS"/>
     </div>
     <Footer/>
   </div>
@@ -21,12 +21,27 @@ import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import InputHome from '@/components/InputHome.vue'
 import ProductsArea from '@/components/ProductsArea.vue'
+import { mapActions, mapGetters} from 'vuex'
 
 export default defineComponent({
   name: 'Home',
   components: {
     Footer, Header, InputHome, ProductsArea
   },
+  data(){
+    return{
+      products: []
+    }
+  },
+  computed: {
+    ...mapGetters(['PRODUCTS'])
+  },
+  methods: {  
+    ...mapActions(['GET_PRODUCTS'])
+  },
+  mounted(){
+    this.GET_PRODUCTS({ url: 'search' , query: 'pizza' })
+  }
 });
 </script>
 
@@ -39,8 +54,8 @@ export default defineComponent({
 }
 .products-area{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 500px;
 }
 .content {
   display: flex;
