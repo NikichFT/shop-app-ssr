@@ -1,7 +1,7 @@
 <template>
     <div class="input-area--home">
-        <input type="text" ref="input" class="input-home" :class="{'active-search': route.name === 'SearchView'}" :style="{ borderRadius: route.name === 'SearchView' ? 0 : '30px', height: route.name === 'SearchView' ? '100px' : '42px' }" @focus="searchActive = true" @focusout="searchActive = false" placeholder="Search" @click="this.$router.push({ path: 'search' })"/>
-        <button class="input-home-button" :style="{ marginLeft: route.name === 'SearchView' ? '95%' : '200px' }" title="Search"><i class="fa fa-search"></i></button>
+        <input type="text" ref="input" class="input-home" :class="{'active-search': route.name === 'SearchView'}" :style="{ borderRadius: route.name === 'SearchView' ? 0 : '5vh', height: route.name === 'SearchView' ? '100px' : '' }" @focus="searchActive = true" @focusout="searchActive = false" placeholder="Search" @click="this.$router.push({ path: 'search' })"/>
+        <button class="input-home-button" :style="{ marginLeft: route.name === 'SearchView' ? '95%' : '' }" title="Search"><i class="fa fa-search"></i></button>
     </div>
 </template>
 
@@ -43,9 +43,8 @@ export default defineComponent({
 }
 .input-home{
     outline: 0;
-    height: 42px;
-    width: 244px;
-    line-height: 42px;
+    height: 5vh;
+    width: 50%;
     padding: 0 16px;
     background-color: #EFEEEE;
     color: #212121;
@@ -67,7 +66,7 @@ export default defineComponent({
     outline: 0;
     background: none;
     position: absolute;
-    margin-left: 200px;
+    margin-left: 40%;
     height: 42px;
     width: 42px;
     text-align: center;

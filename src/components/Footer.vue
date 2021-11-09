@@ -42,6 +42,10 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     flex: 0 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
     z-index: 999;
     height: 100px;
     @include padding-page;

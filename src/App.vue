@@ -45,6 +45,7 @@ body::-webkit-scrollbar {
 .title{
   font-family: "SF Pro Rounded";
   font-size: 34px;
+  margin-top: 100px;
 }
 
 *{

@@ -4,7 +4,7 @@
           <img :src="image" :alt="name">
       </div>
       <div class="product-body">
-        <div class="product-name">{{name}}</div>
+        <div class="product-name">{{name.split(',')[0]}}</div>
         <div class="product-price">{{price}}</div>
       </div>
   </div>
@@ -25,8 +25,8 @@ export default {
 @import '../utils/style-variables.scss';
 
 .product{
-    width: 120px;
-    height: 321px;
+    width: 300px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +39,7 @@ export default {
     justify-self: center;
     &:hover{
         transform: scale(1.2);
+        z-index: 999;
     }
     &-icon{
         img{

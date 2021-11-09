@@ -9,7 +9,9 @@
       <router-view/> -->
       <div class="title">Delicious <br> food for you</div>
       <InputHome/>
-      <ProductsArea :products="PRODUCTS"/>
+      <div class="products-area">
+        <Product v-for="product in PRODUCTS" :key="product.id" :name="product.name" :image="product.image" :price="product.id"/>
+      </div>
     </div>
     <Footer/>
   </div>
@@ -20,13 +22,13 @@ import { defineComponent } from 'vue';
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import InputHome from '@/components/InputHome.vue'
-import ProductsArea from '@/components/ProductsArea.vue'
+import Product from '@/components/Product.vue'
 import { mapActions, mapGetters} from 'vuex'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    Footer, Header, InputHome, ProductsArea
+    Footer, Header, InputHome, Product
   },
   data(){
     return{
@@ -47,15 +49,20 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .home{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 .products-area{
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
-  height: 500px;
+  height: auto;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  padding-bottom: 200px;
+  z-index: 0;
 }
 .content {
   display: flex;
@@ -64,5 +71,11 @@ export default defineComponent({
   flex: 1 0 auto;
   padding-right: 10%;
   padding-left: 10%;  
+}
+.input-area--home{
+  margin-top: 5%;
+    position: sticky;
+    top: 100px;
+    z-index: 99999;
 }
 </style>

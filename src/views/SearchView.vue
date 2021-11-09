@@ -3,7 +3,9 @@
         <InputHome/>
         <div class="search-results">
             <div class="title">Found 6 results</div> 
-            <ProductsArea/>
+            <div class="products-area">
+                <Product v-for="product in PRODUCTS" :key="product.id" :name="product.name" :image="product.image" :price="product.id"/>
+            </div>
         </div>
     </div>    
 </template>
@@ -11,12 +13,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import InputHome from '@/components/InputHome.vue'
-import ProductsArea from '@/components/ProductsArea.vue'
+import Product from '@/components/Product.vue'
 
 export default defineComponent({
     name: 'SearchHome',
     components: {
-        InputHome, ProductsArea
+        InputHome, Product
     }
 })
 </script>

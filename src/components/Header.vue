@@ -30,6 +30,10 @@ export default {
     justify-content: space-between;
     height: 100px;
     align-items: flex-end;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
     @include padding-page;
     &__item{
         @include nav-item-style;
