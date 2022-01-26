@@ -5,3 +5,9 @@ export interface ProductsState {
 export interface RootState {
     headerTitle: string
 }
+
+export interface ProductDetails{
+    name: string,
+    id: string,
+    
+}
