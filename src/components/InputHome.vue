@@ -1,7 +1,7 @@
 <template>
     <div class="input-area--home">
         <input type="text" class="input-home" placeholder="Search"/>
-        <input type="submit" class="input-home-button" title="Search"/>
+<!--        <input type="submit" class="input-home-button" title="Search"/>-->
     </div>
 </template>
 
