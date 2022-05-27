@@ -25,7 +25,7 @@ export default {
 @import '../utils/style-variables.scss';
 
 .product{
-    width: 300px;
+    width: 301px;
     height: 400px;
     display: flex;
     flex-direction: column;
