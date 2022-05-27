@@ -60,7 +60,7 @@ export default defineComponent({
     width: 100%;
 }
 .fa-search{
-    color: #000;
+    color: #464646;
 }
 .input-home-button{
     outline: 0;
