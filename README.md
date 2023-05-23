@@ -1,4 +1,6 @@
 # shop-app-ssr
+![Hell o](public/ti.jpg)
+пздц т лх
 
 ## Project setup
 ```
